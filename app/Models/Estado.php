@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Estado extends Model
 {
     use HasFactory;
+
+    //relaciones
+    public function estadoEncabezado(){
+        return $this->hasMany('App\Models\EstadoEncabezado');
+    }
 }

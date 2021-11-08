@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('name',50)->comment('nombre del usuario');
             $table->string('apellido',50)->comment('apellido del usuario');
             $table->string('dui',10)->unique()->comment('numero unico de identidad del usuario');
-            $table->string('email',30)->unique()->comment('direccion de correo electronico del usuario');
+            $table->string('email',60)->unique()->comment('direccion de correo electronico del usuario');
             $table->timestamp('email_verified_at')->nullable()->comment('fecha cuando se verifico por correo');
             $table->string('password')->comment('contraseña del usuario');
             $table->foreignId('tipo_usuario_id')->constrained('tipo_usuarios', 'id')->onUpdate('cascade')->onDelete('restrict');
