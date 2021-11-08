@@ -26,6 +26,7 @@ Route::group(['middleware' => 'admin'], function(){
     Route::resource('/admin/articulos', App\Http\Controllers\ArticuloController::class);
     Route::resource('/admin/proveedores', App\Http\Controllers\ProveedorController::class);
     Route::resource('/admin/categorias', App\Http\Controllers\CategoriaController::class);
+    Route::resource('/admin/solicitudes_prove_encab', App\Http\Controllers\SolicitudesProveedorController::class);
 
 
 
