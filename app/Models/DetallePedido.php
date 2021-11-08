@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class DetallePedido extends Model
 {
     use HasFactory;
+
+
+    public function encabezado(){
+        return $this->belongsToMany('App\Models\SolicitudProveedorEncabezado');
+    }
 }

@@ -15,7 +15,7 @@ class CreateEstadoEncabezadosTable extends Migration
     {
         Schema::create('estado_encabezados', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('solicitud_encabezado_id')->constrained('solicitud_proveedor_encabezados', 'id')->onUpdate('cascade')->onDelete('restrict');
+            $table->foreignId('solicitud_proveedor_encabezados_id')->constrained('solicitud_proveedor_encabezados', 'id')->onUpdate('cascade')->onDelete('restrict');
             $table->foreignId('estado_id')->constrained('estados', 'id')->onUpdate('cascade')->onDelete('restrict');
             $table->string('descripcion')->comment('descripcion de como se encuentra la solicitud con el proveedor');
             $table->timestamps();

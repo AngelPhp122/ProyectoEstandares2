@@ -62,4 +62,10 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    //relaciones
+    public function solicitudes(){
+        return $this->hasMany('App\Models\SolicitudProveedorEncabezado','usuario_id');
+    }
+
 }

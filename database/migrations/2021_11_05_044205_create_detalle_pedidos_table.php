@@ -15,6 +15,7 @@ class CreateDetallePedidosTable extends Migration
     {
         Schema::create('detalle_pedidos', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('solicitud_proveedor_encabezados_id')->constrained('solicitud_proveedor_encabezados', 'id')->onUpdate('cascade')->onDelete('restrict');
             $table->foreignId('articulo_id')->constrained('articulos', 'id')->onUpdate('cascade')->onDelete('restrict');
             $table->unsignedDecimal('precio_unitario',8,2)->comment('precio unitario del costo del articulo');
             $table->unsignedInteger('cantidad')->comment('cantidad solicitada al proveedor');
