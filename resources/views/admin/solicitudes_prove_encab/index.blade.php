@@ -62,10 +62,10 @@ var table = $(document).ready(function () {
         ajax: "{{ route('solicitudes_prove_encab.index') }}",
         columns: [
             {data: 'id', name: 'id'},
-            {data: 'id_proveedor', name: 'id proveedor'},
-            {data: 'id_iva', name: 'id iva'},
+            {data: 'proveedor_id', name: 'id proveedor'},
+            {data: 'iva_id', name: 'id iva'},
             {data: 'total', name: 'total'},
-            {data: 'id_usuario', name: 'id usuario'},
+            {data: 'usuario_id', name: 'id usuario'},
             {data: 'created_at', name: 'creado'},
             {data: 'updated_at', name: 'actualizado'},
             {data: 'action', name: 'action', orderable: false, searchable: false}

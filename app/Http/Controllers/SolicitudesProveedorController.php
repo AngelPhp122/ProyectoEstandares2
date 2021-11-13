@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\SolicitudProveedorEncabezado;
 use Illuminate\Http\Request;
+use DataTables;
 
 class SolicitudesProveedorController extends Controller
 {
@@ -11,9 +13,26 @@ class SolicitudesProveedorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
+        if ($request->ajax()) {
+            $data = SolicitudProveedorEncabezado::select()->get();
+            return Datatables::of($data)
+                    ->addIndexColumn()
+                    ->addColumn('action', function($row){
+                           $btn = '
+                           <a href="javascript:void(0)" class="edit btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
+                           <a href="javascript:void(0)" class="edit btn btn-primary btn-sm"><i class="fas fa-sync-alt"></i></a>
+                           <a href="javascript:void(0)" class="edit btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>';
+
+                            return $btn;
+                    })
+                    ->rawColumns(['action'])
+                    ->make(true);
+        }
+
+        return view('admin.solicitudes_prove_encab.index');
     }
 
     /**

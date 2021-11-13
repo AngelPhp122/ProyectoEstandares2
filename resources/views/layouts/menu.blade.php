@@ -22,5 +22,10 @@
         <p>Categorias</p>
     </a>
 </li>
-
+<li class="nav-item">
+    <a href="{{ route('solicitudes_prove_encab.index') }}" class="nav-link">
+        <i class="nav-icon fas fa-file-contract"></i>
+        <p>Solicitudes al proveedor</p>
+    </a>
+</li>
 
